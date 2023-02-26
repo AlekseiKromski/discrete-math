@@ -2,5 +2,6 @@ package main
 
 func main() {
 	//ShefferExample()
-	PirsExample()
+	//PirsExample()
+	Practice3()
 }

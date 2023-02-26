@@ -16,3 +16,15 @@ func DisjunctionCall() SpecFun {
 		return Disjunction(a, b)
 	}
 }
+
+func EqualCall() SpecFun {
+	return func(a, b int) bool {
+		return Equals(a, b)
+	}
+}
+
+func ImplicationCall() SpecFun {
+	return func(a, b int) bool {
+		return Implication(a, b)
+	}
+}

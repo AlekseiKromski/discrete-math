@@ -19,6 +19,8 @@ func Operation(a, b []int, operation SpecFun) ([]int, error) {
 
 func Conjunction(a, b int) bool { return convertToBool(a) && convertToBool(b) }
 func Disjunction(a, b int) bool { return convertToBool(a) || convertToBool(b) }
+func Equals(a, b int) bool      { return convertToBool(a) == convertToBool(b) }
+func Implication(a, b int) bool { return !convertToBool(a) || convertToBool(b) }
 
 func ReverseOperation(data []int) []int {
 	var tmp []int
