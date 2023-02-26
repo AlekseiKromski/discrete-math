@@ -6,7 +6,7 @@ import (
 )
 
 // Table of Truth
-var matrix = [][]int{
+var matrixForTwo = [][]int{
 	{
 		1, 0, 0, 1,
 	},
@@ -15,19 +15,31 @@ var matrix = [][]int{
 	},
 }
 
+var matrixForThree = [][]int{
+	{
+		1, 0, 1, 0, 0, 1, 0, 1,
+	},
+	{
+		1, 0, 0, 1, 0, 1, 1, 0,
+	},
+	{
+		1, 0, 0, 0, 1, 0, 1, 1,
+	},
+}
+
 var A = Definition{
-	Truth: matrix[0],
+	Truth: matrixForTwo[0],
 	Name:  "A",
 }
 
 var B = Definition{
-	Truth: matrix[1],
+	Truth: matrixForTwo[1],
 	Name:  "B",
 }
 
 func ShefferExample() {
 	result := Definition{
-		Truth: ShefferOperation(matrix[0], matrix[1]),
+		Truth: ShefferOperation(matrixForTwo[0], matrixForTwo[1]),
 		Name:  "C",
 	}
 
@@ -41,7 +53,7 @@ func ShefferExample() {
 
 func PirsExample() {
 	result := Definition{
-		Truth: PirsOperation(matrix[0], matrix[1]),
+		Truth: PirsOperation(matrixForTwo[0], matrixForTwo[1]),
 		Name:  "C",
 	}
 
@@ -53,10 +65,10 @@ func PirsExample() {
 	)
 }
 
-func Practice3() {
+func Practice3Example() {
 
 	//Left side
-	result, err := Operation(matrix[0], matrix[1], EqualCall())
+	result, err := Operation(matrixForTwo[0], matrixForTwo[1], EqualCall())
 	if err != nil {
 		log.Fatal("Error in conjunction operation")
 	}
@@ -68,11 +80,11 @@ func Practice3() {
 	printTable("C - is a left side", leftSide, A, B)
 
 	//Right side
-	implication1, err := Operation(matrix[0], matrix[1], ImplicationCall())
+	implication1, err := Operation(matrixForTwo[0], matrixForTwo[1], ImplicationCall())
 	if err != nil {
 		log.Fatal("Error in implication operation")
 	}
-	implication2, err := Operation(matrix[1], matrix[0], ImplicationCall())
+	implication2, err := Operation(matrixForTwo[1], matrixForTwo[0], ImplicationCall())
 	if err != nil {
 		log.Fatal("Error in implication operation")
 	}
@@ -105,6 +117,34 @@ func Practice3() {
 	}
 
 	fmt.Println("LEFT SIDE AND RIGHT SIDE -> ARE EQUAL")
+}
+
+func Practice4Example() {
+	A := Definition{
+		Truth: matrixForThree[0],
+		Name:  "A",
+	}
+	B := Definition{
+		Truth: matrixForThree[1],
+		Name:  "B",
+	}
+	C := Definition{
+		Truth: matrixForThree[2],
+		Name:  "C",
+	}
+
+	result := Definition{
+		Truth: Practice4(A.Truth, B.Truth, C.Truth),
+		Name:  "F",
+	}
+
+	printTable(
+		"F - result of the function (the result of implication)",
+		result,
+		A,
+		B,
+		C,
+	)
 }
 
 func printTable(comment string, result Definition, definitions ...Definition) {

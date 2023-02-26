@@ -3,5 +3,6 @@ package main
 func main() {
 	//ShefferExample()
 	//PirsExample()
-	Practice3()
+	//Practice3Example()
+	Practice4Example()
 }
