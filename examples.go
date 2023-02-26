@@ -36,6 +36,20 @@ func ShefferExample() {
 	)
 }
 
+func PirsExample() {
+	result := Definition{
+		Truth: PirsOperation(matrix[0], matrix[1]),
+		Name:  "C",
+	}
+
+	printTable(
+		"C - is a disjunction operation",
+		result,
+		A,
+		B,
+	)
+}
+
 func printTable(comment string, result Definition, definitions ...Definition) {
 
 	fmt.Println(comment)

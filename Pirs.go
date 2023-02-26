@@ -2,8 +2,8 @@ package main
 
 import "log"
 
-func ShefferOperation(a, b []int) []int {
-	result, err := Operation(a, b, ConjunctionCall())
+func PirsOperation(a, b []int) []int {
+	result, err := Operation(a, b, DisjunctionCall())
 	if err != nil {
 		log.Fatal("Error in conjunction operation")
 	}
