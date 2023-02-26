@@ -2,18 +2,22 @@ package main
 
 import "fmt"
 
-func ConjunctionOperation(a, b []int) ([]int, error) {
+type SpecFun func(a, b int) bool
+
+func Operation(a, b []int, operation SpecFun) ([]int, error) {
 	if !checkTable(a, b) {
 		return nil, fmt.Errorf("the tables have different lenght")
 	}
 
 	var result []int
 	for i := 0; i < len(a); i++ {
-		result = append(result, convertToInt(Conjunction(a[i], b[i])))
+		result = append(result, convertToInt(operation(a[i], b[i])))
 	}
 
 	return result, nil
 }
+
+func Conjunction(a, b int) bool { return convertToBool(a) && convertToBool(b) }
 
 func ReverseOperation(data []int) []int {
 	var tmp []int
@@ -27,8 +31,6 @@ func ReverseOperation(data []int) []int {
 func Reverse(x int) int {
 	return convertToInt(convertToBool(x) != convertToBool(1))
 }
-
-func Conjunction(a, b int) bool { return convertToBool(a) && convertToBool(b) }
 
 func convertToBool(x int) bool { return x != 0 }
 
