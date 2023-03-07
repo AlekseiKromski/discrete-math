@@ -5,5 +5,6 @@ func main() {
 	//PirsExample()
 	//Practice3Example()
 	//Practice4Example()
-	IsPrimeExample()
+	//IsPrimeExample()
+	FactorizeFermExample(188)
 }
