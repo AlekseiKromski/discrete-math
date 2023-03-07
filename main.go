@@ -8,5 +8,6 @@ func main() {
 	//IsPrimeExample(4)
 	//FactorizeFermExample(4)
 	//EratosphereExample(4)
-	FactorizeExample(134)
+	//FactorizeExample(134)
+	EphclidFunc(30, 18)
 }
