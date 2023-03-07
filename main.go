@@ -5,7 +5,8 @@ func main() {
 	//PirsExample()
 	//Practice3Example()
 	//Practice4Example()
-	//IsPrimeExample()
-	//FactorizeFermExample(188)
-	EratosphereExample(4)
+	//IsPrimeExample(4)
+	//FactorizeFermExample(4)
+	//EratosphereExample(4)
+	FactorizeExample(134)
 }

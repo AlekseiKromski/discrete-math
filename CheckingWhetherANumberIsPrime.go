@@ -5,8 +5,8 @@ import (
 	"math"
 )
 
-func IsPrimeExample() {
-	result := isPrime(18)
+func IsPrimeExample(n int) {
+	result := isPrime(n)
 	if result {
 		fmt.Println("простое")
 		return
