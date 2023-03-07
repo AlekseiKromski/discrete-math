@@ -6,5 +6,6 @@ func main() {
 	//Practice3Example()
 	//Practice4Example()
 	//IsPrimeExample()
-	FactorizeFermExample(188)
+	//FactorizeFermExample(188)
+	EratosphereExample(4)
 }
