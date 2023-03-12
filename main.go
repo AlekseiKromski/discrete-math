@@ -9,5 +9,6 @@ func main() {
 	//FactorizeFermExample(4)
 	//EratosphereExample(4)
 	//FactorizeExample(134)
-	EphclidFunc(30, 18)
+	//EphclidFunc(30, 18)
+	DrobExample(569, 233)
 }
